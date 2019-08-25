@@ -8,6 +8,7 @@ import javax.faces.bean.SessionScoped;
 
 import entities.EmployeeEntity;
 
+
 @ManagedBean(name = "employee")
 @SessionScoped
 public class Employee implements Serializable {
@@ -18,6 +19,20 @@ public class Employee implements Serializable {
 	private Date dateOfBirth;
 	
 	
+	public Employee() {
+		// TODO Auto-generated constructor stub
+	}
+	
+		
+	public Employee(String name, String surName, Date dateOfBirth) {
+		super();
+		this.name = name;
+		this.surName = surName;
+		this.dateOfBirth = dateOfBirth;
+	}
+
+
+
 	public String getName() {
 		return name;
 	}

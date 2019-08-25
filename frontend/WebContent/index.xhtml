@@ -2,26 +2,61 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:f="http://java.sun.com/jsf/core"      
-      xmlns:h="http://java.sun.com/jsf/html">
-	
-    <h:head>
-        <title>TUT Employee Example</title>
-    </h:head>
-    <h:body>
-    	<h2>JSF 2.0 Hello World Example - hello.xhtml</h2>
-    	<h:form>
-    		<h:panelGrid columns="2" >
-    		<h:outputLabel value="First Name : "/>
-    	   <h:inputText value="#{employeecontroller.employee.name}"></h:inputText>
-    	   <h:outputLabel value="Surname : "/>
-    	   <h:inputText value="#{employeecontroller.employee.surName}"></h:inputText>
-    	   <h:outputLabel value="Date of birth : "/>
-    	   <h:inputText value="#{employeecontroller.employee.dateOfBirth}">
-              <f:convertDateTime pattern="dd/mm/yyyy"/>
-               </h:inputText>
-    	   </h:panelGrid>
-    	   <h:commandButton value="submit" action="#{employeecontroller.addNewEmployee}"></h:commandButton>
-    	</h:form>
-    </h:body>
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+<h:head>
+	<title>TUT Employee Management System</title>
+</h:head>
+<h:body>
+	<h2>TUT Employee Management System</h2>
+	<h:form>
+		<h:panelGrid columns="2" title="Add Employee">
+			<h:outputLabel value="First Name : " />
+			<h:inputText value="#{employeecontroller.employee.name}"></h:inputText>
+			<h:outputLabel value="Surname : " />
+			<h:inputText value="#{employeecontroller.employee.surName}"></h:inputText>
+			<h:outputLabel value="Date of birth (dd/mm/yyyy):" />
+			<h:inputText value="#{employeecontroller.employee.dateOfBirth}">
+				<f:convertDateTime pattern="dd/mm/yyyy" />
+			</h:inputText>
+		</h:panelGrid>
+		<h:commandButton value="submit"
+			action="#{employeecontroller.addNewEmployee}"></h:commandButton>
+	</h:form>
+
+	<hr />
+	<c:if test="#{fn:length(employeecontroller.employeeList) == 0}">
+		<b>No records on system</b>
+	</c:if>
+	<c:if test="#{fn:length(employeecontroller.employeeList) > 0}">
+		<h:dataTable id="employees" title="Employee list"
+			value="#{employeecontroller.employeeList}" var="employee">
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Name" />
+				</f:facet>
+				<h:outputText value="#{employee.name}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Surname" />
+				</f:facet>
+				<h:outputText value="#{employee.surName}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Date of birth" />
+				</f:facet>
+				<h:outputText value="#{employee.dateOfBirth}">
+					<f:convertDateTime type="date" pattern="dd/mm/yyyy" />
+				</h:outputText>
+			</h:column>
+
+		</h:dataTable>
+	</c:if>
+</h:body>
 </html>
