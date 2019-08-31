@@ -8,9 +8,9 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/michael/git/employeemanagement/libs/hibernate-c3p0-4.3.8.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/michael/git/employeemanagement/libs/hibernate-commons-annotations-4.0.5.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/michael/git/employeemanagement/libs/hibernate-core-4.3.8.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/michael/git/employeemanagement/libs/log4j-api-2.1.jar"/>
+	<classpathentry kind="lib" path="/employeemanagement-master/libs/hibernate-c3p0-4.3.8.Final.jar"/>
+	<classpathentry kind="lib" path="/employeemanagement-master/libs/hibernate-commons-annotations-4.0.5.Final.jar"/>
+	<classpathentry kind="lib" path="/employeemanagement-master/libs/hibernate-core-4.3.8.Final.jar"/>
+	<classpathentry kind="lib" path="/employeemanagement-master/libs/log4j-api-2.1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
