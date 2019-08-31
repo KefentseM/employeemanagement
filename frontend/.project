@@ -3,7 +3,6 @@
 	<name>frontend</name>
 	<comment></comment>
 	<projects>
-		<project>backend</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
